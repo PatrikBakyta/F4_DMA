@@ -44,10 +44,15 @@ SOFTWARE.
 **===========================================================================
 */
 
+
 int main(void) {
 
+	uint32_t SRC_Const_Buffer[]= {0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,0x11121314};
+
+	uint32_t DST_Buffer[BUFFER_SIZE];
+
 	initLED();
-	initDMA();
+	initDMA(SRC_Const_Buffer,DST_Buffer);
 
 	//LED on before transfer (PIN12)
 	GPIO_SetBits(GPIOD,GPIO_Pin_12);
